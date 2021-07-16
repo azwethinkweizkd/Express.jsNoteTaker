@@ -1,6 +1,5 @@
 const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
-const path = require("path");
 
 module.exports = (app) => {
   function readJsonFileSync(filepath) {
@@ -18,7 +17,6 @@ module.exports = (app) => {
   }
 
   let jsonDb = getConfig("../db/db.json");
-  //   console.log(jsonDb);
 
   app.get("/api/notes", (req, res) => {
     res.json(jsonDb);
@@ -37,11 +35,7 @@ module.exports = (app) => {
 
   app.delete("/api/notes/:id", (req, res) => {
     const { id } = req.params;
-    console.log({ id });
     const indexToDelete = jsonDb.findIndex((note) => note.id === Number(id));
-    if (!indexToDelete) {
-      return res.status(404).json({ error: "No user with that id" });
-    }
     const noteDeleted = jsonDb[indexToDelete];
     jsonDb.splice(indexToDelete, 1);
     writeJsonFileSync(jsonDb);
