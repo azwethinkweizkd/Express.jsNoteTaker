@@ -22,7 +22,21 @@ Here is a simple GIF demostrating the functionality of the Note Take Application
 
 ## Installation
 
-No installation is required fo this application to run. Simply click on the link in the description above and start using immediately. Follow the instructions on the first screen and click the button to take you to the note section of the application and begin taking notes! Make sure to bookmark the application that is deployed on Heroku for future use.
+Installation of this application will require one to transfer all files (JS & json) to a working directory on their computer. As well as the ability to acces the computer terminal, either through GitBash or VSCode. This applcation can be found on this GitHub repository:
+
+[Note Taker App using Express.js - Kevin Devlin](https://github.com/azwethinkweizkd/Express.jsNoteTaker)
+
+Once files have been save into a working directory a one more step will need to take place, and that is to install node_modules. The node_modules will include two important installation packages which are: inquirer & fs.
+
+To install the node_modules properly one will need to type in the terminal under the current working directory for the application:
+
+```bash
+npm i
+```
+
+Make sure that you are in the directory that these JS & json files have been saved to. Otherwise you will be intalling the node_modules to the wrong directory, and thus will not allow the appliation to work.
+
+The two pacakages that will be downloaded are express and uuid. Express will be used to create a server location for the app to operate, and uuid will be used to create a unique id to get, post, or delete a note.
 
 ## Usage
 
